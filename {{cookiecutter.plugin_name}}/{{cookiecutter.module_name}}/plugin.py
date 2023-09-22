@@ -1,5 +1,5 @@
 ###################################################################################
-# {{cookiecutter.plugin_name}} - a google_translate plugin for ocr_translate              #
+# {{cookiecutter.plugin_name}} - a plugin for ocr_translate              #
 # Copyright (C) 2023-present {{ cookiecutter.github_user }}                                      #
 #                                                                                 #
 # This program is free software: you can redistribute it and/or modify            #
@@ -23,7 +23,7 @@ from ocr_translate import models as m
 from PIL import Image
 
 class {{ cookiecutter.model_name_prefix | replace('_', '') }}OCRBoxModel(m.OCRBoxModel):
-    """OCRBoxtranslate plugin to allow usage of ... for box detection."""
+    """OCRBoxModel plugin to allow usage of ... for box detection."""
     class Meta:
         proxy = True
 
@@ -56,7 +56,7 @@ class {{ cookiecutter.model_name_prefix | replace('_', '') }}OCRBoxModel(m.OCRBo
         # Should return a list of `lrbt` boxes after processing the input PILImage
 
 class {{ cookiecutter.model_name_prefix | replace('_', '') }}OCRModel(m.OCRModel):
-    """OCRBoxtranslate plugin to allow usage of ... for box detection."""
+    """OCRModel plugin to allow usage of ... for ocr."""
     class Meta:
         proxy = True
 
@@ -92,7 +92,7 @@ class {{ cookiecutter.model_name_prefix | replace('_', '') }}OCRModel(m.OCRModel
         # Unless the methods `prepare_image` or `ocr` are also being overwritten, the input image will be the result of the CROP on the original image using the bounding boxes given by the box detection model.
 
 class {{ cookiecutter.model_name_prefix | replace('_', '') }}TSLModel(m.TSLModel):
-    """OCRBoxtranslate plugin to allow usage of ... for box detection."""
+    """TSLModel plugin to allow usage of ... for translation."""
     class Meta:
         proxy = True
 

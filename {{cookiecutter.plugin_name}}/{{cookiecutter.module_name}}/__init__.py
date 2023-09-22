@@ -1,5 +1,5 @@
 ###################################################################################
-# {{cookiecutter.plugin_name}} - a google_translate plugin for ocr_translate              #
+# {{cookiecutter.plugin_name}} - a plugin for ocr_translate              #
 # Copyright (C) 2023-present {{ cookiecutter.github_user }}                                      #
 #                                                                                 #
 # This program is free software: you can redistribute it and/or modify            #
