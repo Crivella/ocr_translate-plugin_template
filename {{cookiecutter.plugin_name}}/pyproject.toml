@@ -1,0 +1,62 @@
+[build-system]
+# build the package with [flit](https://flit.readthedocs.io)
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+# See https://www.python.org/dev/peps/pep-0621/
+name = "{{cookiecutter.plugin_name}}"
+dynamic = ["version"] # read from ocr_translate/__init__.py
+description = "{{cookiecutter.short_description}}"
+authors = []
+readme = "README.md"
+license = { file = "LICENSE.txt" }
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+]
+keywords = ["django", "translation"]
+requires-python = ">=3.10"
+dependencies = [
+    "django-ocr_translate>=0.2.1,<1.0",
+]
+
+[project.urls]
+Source = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}"
+
+[project.optional-dependencies]
+release = [
+    "flit",
+]
+
+[project.entry-points."ocr_translate.box_data"]
+"{{ cookiecutter.entry_point_prefix }}.box" = "{{ cookiecutter.module_name }}:box_model_data"
+
+[project.entry-points."ocr_translate.ocr_data"]
+"{{ cookiecutter.entry_point_prefix }}.ocr" = "{{ cookiecutter.module_name }}:ocr_model_data"
+
+[project.entry-points."ocr_translate.tsl_data"]
+"{{ cookiecutter.entry_point_prefix }}.tsl" = "{{ cookiecutter.module_name }}:tsl_model_data"
+
+[project.entry-points."ocr_translate.box_models"]
+"{{ cookiecutter.entry_point_prefix }}.box" = "{{ cookiecutter.module_name }}.plugin:{{ cookiecutter.model_name_prefix | replace('_', '') }}OCRBoxModel"
+
+[project.entry-points."ocr_translate.ocr_models"]
+"{{ cookiecutter.entry_point_prefix }}.ocr" = "{{ cookiecutter.module_name }}.plugin:{{ cookiecutter.model_name_prefix | replace('_', '') }}OCRModel"
+
+[project.entry-points."ocr_translate.tsl_models"]
+"{{ cookiecutter.entry_point_prefix }}.tsl" = "{{ cookiecutter.module_name }}.plugin:{{ cookiecutter.model_name_prefix | replace('_', '') }}TSLModel"
+
+[tool.flit.module]
+name = "{{ cookiecutter.module_name }}"
+
+[tool.pylint.format]
+max-line-length = 120
+good-names = [
+    "_",
+]
+
+[tool.pylint.design]
+max-args = 10
+max-locals = 20
+max-attributes = 12

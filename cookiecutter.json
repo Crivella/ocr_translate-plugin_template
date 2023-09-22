@@ -1,0 +1,10 @@
+{
+    "plugin_name": "my-plugin",
+    "module_name": "{{ cookiecutter.plugin_name | replace('-', '_') }}",
+    "short_description": "Short description for the plugin",
+    "model_name_prefix": "my_model",
+    "entry_point_prefix": "{{ cookiecutter.module_name | replace('aiida_','') }}",
+    "github_user": "your_github_username",
+    "repo_name": "{{ cookiecutter.plugin_name }}",
+    "version": "0.1.0"
+}
